@@ -4,6 +4,7 @@ import java.util.Date;
 
 import br.com.loboalphadinamite.delivery.entidade.Cliente;
 import br.com.loboalphadinamite.delivery.entidade.Endereco;
+import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
 import br.com.loboalphadinamite.delivery.negocios.Fachada;
 
 public class MainProgramacao2 {
@@ -28,9 +29,17 @@ public class MainProgramacao2 {
 		
 		c.setEndereco(e);
 		
+		FormaPagamento f = new FormaPagamento();
+		f.setCodigo(123);
+		f.setNome("american express");
+		
 		Fachada fachada = Fachada.getInstancia();
 		fachada.inserirCliente(c);
 		System.out.println(fachada.procurarCliente("10758480407"));
+		fachada.inserirFormaPagamento(f);
+		System.out.println(fachada.procurarFormaPagamento(123));
+		
+		
 	}
 
 }
