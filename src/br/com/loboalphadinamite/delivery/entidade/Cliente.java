@@ -36,7 +36,7 @@ public class Cliente extends Pessoa{
 	
 	
 	public String toString() {
-		return "Cliente [endereco=" + endereco + ", celular=" + celular
+		return super.toString()+ "Cliente [endereco=" + endereco + ", celular=" + celular
 				+ ", telefone=" + telefone + ", email=" + email + "]";
 	}
 	

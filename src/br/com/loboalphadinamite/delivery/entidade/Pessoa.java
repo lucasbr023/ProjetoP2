@@ -8,6 +8,10 @@ public class Pessoa {
 	private String cpf;
 	private Date dataNascimento;
 	
+	public Pessoa() {
+		super();
+	}
+	
 	
 	public String getNome() {
 		return nome;
@@ -31,7 +35,7 @@ public class Pessoa {
 	
 	
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", cpf=" + cpf + ", dataNascimento="
+		return super.toString() + "Pessoa [nome=" + nome + ", cpf=" + cpf + ", dataNascimento="
 				+ dataNascimento + "]";
 	}
 	

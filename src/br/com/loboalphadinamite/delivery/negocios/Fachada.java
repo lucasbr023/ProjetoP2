@@ -5,11 +5,12 @@ import java.io.Serializable;
 import br.com.loboalphadinamite.delivery.entidade.Cliente;
 import br.com.loboalphadinamite.delivery.entidade.Entregador;
 import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
+import br.com.loboalphadinamite.delivery.entidade.Pedido;
 import br.com.loboalphadinamite.delivery.entidade.Produto;
-import br.com.loboalphadinamite.delivery.repositorio.RepositorioCliente;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioClienteJDBC;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioEntregador;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioFormaPagamento;
+import br.com.loboalphadinamite.delivery.repositorio.RepositorioPedido;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioProdutos;
 
 public class Fachada {
@@ -20,6 +21,7 @@ public class Fachada {
 	private CadastroFormaPagamento cadastroFormaPagamento;
 	private CadastroProdutos cadastroProduto;
 	private CadastroEntregador cadastroEntregador;
+	private CadastroPedidos cadastroPedidos;
 
 
 	private Fachada(){
@@ -39,6 +41,7 @@ public class Fachada {
 		cadastroFormaPagamento = new CadastroFormaPagamento(new RepositorioFormaPagamento());
 		cadastroProduto = new CadastroProdutos(new RepositorioProdutos());
 		cadastroEntregador = new CadastroEntregador(new RepositorioEntregador());
+		cadastroPedidos = new CadastroPedidos(new RepositorioPedido());
 	}
 
 	public void inserirCliente(Cliente cliente){
@@ -87,7 +90,7 @@ public class Fachada {
 	public void removerProduto(Serializable codigo){
 		cadastroProduto.remover(codigo);
 	}
-	public Produto procurarProduto (Integer codigo){
+	public Produto procurarProduto (Serializable codigo){
 		return cadastroProduto.procurar(codigo);
 	}
 	public  Produto[] buscarTodosProdutos(){
@@ -97,20 +100,39 @@ public class Fachada {
 	public void inserirEntregador(Entregador entidade){
 		cadastroEntregador.inserir(entidade);
 	}
-	public void removerEntregador(String matricula){
-		cadastroEntregador.remover(matricula);
+	public void removerEntregador(String chave){
+		cadastroEntregador.remover(chave);
 	}
 
 	public void atualizarEntregador(Entregador entidade){
 		cadastroEntregador.atualizar(entidade);
 	}
 
-	public Entregador procurarEntregador(String matricula){
-		return cadastroEntregador.procurar(matricula);
+	public Entregador procurarEntregador(Serializable chave){
+		return cadastroEntregador.procurar(chave);
 	}
 
 	public Entregador [] buscarTodosEntregadores(){
 		return cadastroEntregador.buscarTodos();
+	}
+	
+	public void inserirPedido(Pedido entidade){
+		cadastroPedidos.inserir(entidade);
+	}
+	public void removerPedido(Serializable chave){
+		cadastroPedidos.remover(chave);
+	}
+
+	public void atualizarPedido(Pedido entidade){
+		cadastroPedidos.atualizar(entidade);
+	}
+
+	public Pedido procurarPedido(Serializable chave){
+		return cadastroPedidos.procurar(chave);
+	}
+
+	public Pedido[] buscarTodosPedidos(){
+		return cadastroPedidos.buscarTodos();
 	}
 }
 

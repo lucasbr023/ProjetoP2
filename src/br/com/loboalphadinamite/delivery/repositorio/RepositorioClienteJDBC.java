@@ -36,7 +36,7 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);
-			
+
 			ps.setString(1, entidade.getNome());
 			ps.setString(2, entidade.getCpf());
 			ps.setDate(3, new java.sql.Date(entidade.getDataNascimento().getTime()));
@@ -58,27 +58,25 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 			}
 
 			Util.fechaConexao(conn);
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		
 	}
 
 	@Override
 	public void atualizar(Cliente entidade) {
-		
+
 		String sql = "UPDATE \"CLIENTE\" SET \"NOME\"=?, "
 				+ "\"DATA_NASCIMENTO\"=?, \"TELEFONE\"=?, "
 				+ "\"CELULAR\"=?,\"EMAIL\"=?, \"LOGRADOURO\"=?, "
 				+ "\"NUMERO\"=?, \"BAIRRO\"=?, \"CIDADE\"=?,"
 				+ "\"ESTADO\"=?, \"CEP\"=?, \"COMPLEMENTO\"=? "
 				+ "WHERE \"CPF\"=?";
-		
+
 		Connection conn = Util.getConexao();
-		
+
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);
@@ -95,20 +93,19 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 			ps.setString(11, entidade.getEndereco().getCep());
 			ps.setString(12, entidade.getEndereco().getComplemento());
 			ps.setString(13, entidade.getCpf());
-			
+
 			int i = ps.executeUpdate();
-			
+
 			if (i != 1) {
 				throw new SQLException();
 			}
-			
+
 			Util.fechaConexao(conn);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 	@Override
@@ -124,18 +121,16 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 			ps.setString(1, String.valueOf(chave));
 
 			int i = ps.executeUpdate();
-			
+
 			if (i != 1) {
 				throw new SQLException();
 			}
-			
+
 			Util.fechaConexao(conn);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	
 
 	}
 
@@ -181,17 +176,14 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 			e.printStackTrace();
 		}
 		return null;
-		
-		
 
-		
 	}
 
 	@Override
 	public Cliente[] buscarTodos() {
-		
+
 		List<Cliente> listaClientes = new ArrayList<>();
-		
+
 		String sql = "SELECT * FROM \"CLIENTE\"";
 
 		Connection conn = Util.getConexao();
@@ -199,11 +191,11 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);
-			
+
 			ResultSet result = ps.executeQuery();
 
 			Cliente clienteAtual = null;
-
+			
 			while (result.next()){
 				clienteAtual = new Cliente();
 				clienteAtual.setNome(result.getString("NOME"));
@@ -233,7 +225,6 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 		}
 		return null;
 
-		
 	}
 
 }

@@ -9,6 +9,12 @@ public aspect Teste {
 	
 	pointcut procurar(): execution(public * br.com.loboalphadinamite.delivery.negocios.Fachada.procurar*(..));
 	
+	
+	pointcut buscarTodos():  execution(public * br.com.loboalphadinamite.delivery.negocios.Fachada.buscar*(..));
+	
+	
+	
+	
 	after(): inserir(){
 		System.out.println("Cadastro Realizado com sucesso!");
 		

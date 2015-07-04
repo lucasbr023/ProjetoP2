@@ -1,11 +1,13 @@
 package br.com.loboalphadinamite.delivery.main;
 
 import java.util.Date;
+import java.util.List;
 
 import br.com.loboalphadinamite.delivery.entidade.Cliente;
 import br.com.loboalphadinamite.delivery.entidade.Endereco;
 import br.com.loboalphadinamite.delivery.entidade.Entregador;
 import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
+import br.com.loboalphadinamite.delivery.entidade.Pedido;
 import br.com.loboalphadinamite.delivery.entidade.Produto;
 import br.com.loboalphadinamite.delivery.negocios.Fachada;
 
@@ -13,8 +15,8 @@ public class MainProgramacao2 {
 	
 	public static void main(String[] args) {
 		Cliente c = new Cliente();
-		c.setNome("Lucas");
-		c.setCpf("10758480407");
+		c.setNome("Luca2s");
+		c.setCpf("10758480403");
 		c.setEmail("lmc3@cin.ufpe.br");
 		c.setCelular("97869803");
 		c.setTelefone("32286151");
@@ -50,17 +52,31 @@ public class MainProgramacao2 {
 		en.setPlacaMoto("PEN-4655");
 		
 		
+		Pedido pedido = new Pedido();
+		pedido.setCliente(c);
+		pedido.setCodigo(1234);
+		pedido.setDataPedido(new Date());
+		pedido.setEntregador(en);
+		pedido.setFormaPagamento(f);
+		
 		
 		Fachada fachada = Fachada.getInstancia();
 		//fachada.inserirCliente(c);
-		System.out.println(fachada.procurarCliente("10758480407"));
-		System.out.println(fachada.buscarTodosClientes());
-		fachada.inserirFormaPagamento(f);
-		System.out.println(fachada.procurarFormaPagamento(123));
-		fachada.inserirProduto(p);
-		System.out.println(fachada.procurarProduto(45));
-		fachada.inserirEntregador(en);
-		System.out.println(fachada.procurarEntregador("123456"));
+		
+
+		
+		System.out.println(fachada.procurarCliente("10758480403"));
+		System.out.println(fachada.buscarTodosClientes().toString());
+		fachada.buscarTodosClientes().toString();
+		//fachada.removerCliente("10758480407");
+//		fachada.inserirFormaPagamento(f);
+//		System.out.println(fachada.procurarFormaPagamento(123));
+//		fachada.inserirProduto(p);
+//		System.out.println(fachada.procurarProduto(45));
+//		fachada.inserirEntregador(en);
+//		System.out.println(fachada.procurarEntregador("123456"));
+		fachada.inserirPedido(pedido);
+		
 		
 		
 	}
