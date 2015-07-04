@@ -43,7 +43,6 @@ public class Pedido {
 		this.formaPagamento = formaPagamento;
 	}
 	
-	@Override
 	public String toString() {
 		return "Pedido [codigo=" + codigo + ", dataPedido=" + dataPedido
 				+ ", cliente=" + cliente + ", entregador=" + entregador

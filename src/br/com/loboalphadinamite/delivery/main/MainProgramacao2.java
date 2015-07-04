@@ -35,7 +35,7 @@ public class MainProgramacao2 {
 		
 		FormaPagamento f = new FormaPagamento();
 		f.setCodigo(123);
-		f.setNome("american express");
+		f.setNome("american express2");
 		
 		Produto p = new Produto();
 		p.setCodigo(45);
@@ -62,14 +62,12 @@ public class MainProgramacao2 {
 		
 		Fachada fachada = Fachada.getInstancia();
 		//fachada.inserirCliente(c);
-		
-
-		
 		System.out.println(fachada.procurarCliente("10758480403"));
 		System.out.println(fachada.buscarTodosClientes().toString());
 		fachada.buscarTodosClientes().toString();
 		//fachada.removerCliente("10758480407");
-//		fachada.inserirFormaPagamento(f);
+	//	fachada.inserirFormaPagamento(f);
+		fachada.atualizarFormaPagamento(f);
 //		System.out.println(fachada.procurarFormaPagamento(123));
 //		fachada.inserirProduto(p);
 //		System.out.println(fachada.procurarProduto(45));

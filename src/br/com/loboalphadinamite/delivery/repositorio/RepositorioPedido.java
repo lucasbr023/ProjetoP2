@@ -31,19 +31,16 @@ public class RepositorioPedido implements Repositorio<Pedido> {
 		return posicao;
 	}
 
-	@Override
 	public boolean existe(Serializable chave) {
 		return procurarIndice(chave) != -1;
 	}
 	
 	
 
-	@Override
 	public void inserir(Pedido entidade) {
 		pedidos[indice++] = entidade;
 	}
 
-	@Override
 	public void atualizar(Pedido entidade) {
 		if(existe(entidade.getCodigo())){
 			int i = procurarIndice(entidade.getCodigo());
@@ -51,7 +48,6 @@ public class RepositorioPedido implements Repositorio<Pedido> {
 		}
 	}
 
-	@Override
 	public void remover(Serializable chave) {
 		int i = 0;
 		if(existe(chave)){
@@ -63,7 +59,6 @@ public class RepositorioPedido implements Repositorio<Pedido> {
 		
 	}
 
-	@Override
 	public Pedido procurar(Serializable chave) {
 		Pedido retorno = null;
 		int indice = 0;
@@ -74,7 +69,6 @@ public class RepositorioPedido implements Repositorio<Pedido> {
 		return retorno;
 	}
 
-	@Override
 	public Pedido[] buscarTodos() {
 		// TODO Auto-generated method stub
 		return pedidos;
