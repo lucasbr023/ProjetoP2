@@ -4,6 +4,7 @@ import java.util.Date;
 
 import br.com.loboalphadinamite.delivery.entidade.Cliente;
 import br.com.loboalphadinamite.delivery.entidade.Endereco;
+import br.com.loboalphadinamite.delivery.entidade.Entregador;
 import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
 import br.com.loboalphadinamite.delivery.entidade.Produto;
 import br.com.loboalphadinamite.delivery.negocios.Fachada;
@@ -40,6 +41,16 @@ public class MainProgramacao2 {
 		p.setNome("Churros");
 		p.setPecoUnitario(10.0);
 		
+		Entregador en = new Entregador();
+		en.setCpf("12345678911");
+		en.setDataNascimento(new Date());
+		en.setMatricula("123456");
+		en.setModeloMoto("FORD KA");
+		en.setNome("NATALIA");
+		en.setPlacaMoto("PEN-4655");
+		
+		
+		
 		Fachada fachada = Fachada.getInstancia();
 		fachada.inserirCliente(c);
 		System.out.println(fachada.procurarCliente("10758480407"));
@@ -47,6 +58,8 @@ public class MainProgramacao2 {
 		System.out.println(fachada.procurarFormaPagamento(123));
 		fachada.inserirProduto(p);
 		System.out.println(fachada.procurarProduto(45));
+		fachada.inserirEntregador(en);
+		System.out.println(fachada.procurarEntregador("123456"));
 		
 		
 	}
