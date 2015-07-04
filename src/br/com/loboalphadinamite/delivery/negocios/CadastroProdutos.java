@@ -2,57 +2,50 @@ package br.com.loboalphadinamite.delivery.negocios;
 
 import java.io.Serializable;
 
-import br.com.loboalphadinamite.delivery.entidade.Cliente;
+import br.com.loboalphadinamite.delivery.entidade.Produto;
 import br.com.loboalphadinamite.delivery.interfaces.Cadastro;
 import br.com.loboalphadinamite.delivery.interfaces.Repositorio;
 
-public class CadastroClientes implements Cadastro<Cliente>{
+public class CadastroProdutos implements Cadastro<Produto> {
 	
-	Repositorio<Cliente> repositorio;
+	private Repositorio<Produto> repositorio;
 	
-	public CadastroClientes(Repositorio<Cliente> repositorio) {
+	public CadastroProdutos(Repositorio<Produto> repositorio) {
 		this.repositorio = repositorio;
 	}
+	
 
-	@Override
 	public boolean existe(Serializable chave) {
 		return repositorio.existe(chave);
 	}
 
-	
-	public void inserir(Cliente entidade) {
+	public void inserir(Produto entidade) {
 		if(validar(entidade)){
 			repositorio.inserir(entidade);
 		}
 	}
 
-	
-	public void atualizar(Cliente entidade) {
+	public void atualizar(Produto entidade) {
 		if(validar(entidade)){
 			repositorio.atualizar(entidade);
 		}
 	}
 
-	@Override
 	public void remover(Serializable chave) {
 		repositorio.remover(chave);
 	}
 
-	
-	public Cliente procurar(Serializable chave) {
+	public Produto procurar(Serializable chave) {
 		return repositorio.procurar(chave);
 	}
 
-	public Cliente[] buscarTodos() {
+	public Produto[] buscarTodos() {
 		return repositorio.buscarTodos();
 	}
 	
-	
-	public static final boolean validar(Cliente cliente){
+	public static boolean validar(Produto produto){
 		
 		return true;
+		
 	}
-	
-	
-
 }

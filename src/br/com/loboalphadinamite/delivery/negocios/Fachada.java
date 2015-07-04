@@ -4,8 +4,10 @@ import java.io.Serializable;
 
 import br.com.loboalphadinamite.delivery.entidade.Cliente;
 import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
+import br.com.loboalphadinamite.delivery.entidade.Produto;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioCliente;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioFormaPagamento;
+import br.com.loboalphadinamite.delivery.repositorio.RepositorioProdutos;
 
 public class Fachada {
 	
@@ -13,6 +15,7 @@ public class Fachada {
 	public static Fachada instancia;
 	private CadastroClientes cadastroClientes;
 	private CadastroFormaPagamento cadastroFormaPagamento;
+	private CadastroProdutos cadastroProduto;
 	
 	
 	private Fachada(){
@@ -30,6 +33,7 @@ public class Fachada {
 	public void init(){
 		cadastroClientes = new CadastroClientes(new RepositorioCliente());
 		cadastroFormaPagamento = new CadastroFormaPagamento(new RepositorioFormaPagamento());
+		cadastroProduto = new CadastroProdutos(new RepositorioProdutos());
 	}
 	
 	public void inserirCliente(Cliente cliente){
@@ -69,6 +73,23 @@ public class Fachada {
 	public FormaPagamento[] buscarTodosFormaPagamentos(){
 		return cadastroFormaPagamento.buscarTodos();
 		
+	}
+	
+	public void inserirProduto(Produto produto){
+		cadastroProduto.inserir(produto);
+	}
+	
+	public void atualizarProduto(Produto produto){
+		cadastroProduto.atualizar(produto);	
+	}
+	public void removerProduto(Serializable codigo){
+		cadastroProduto.remover(codigo);
+	}
+	public Produto procurarProduto (Integer codigo){
+		return cadastroProduto.procurar(codigo);
+	}
+	public  Produto[] buscarTodosProdutos(){
+		return cadastroProduto.buscarTodos();
 	}
 }
 
