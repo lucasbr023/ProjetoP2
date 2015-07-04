@@ -25,7 +25,7 @@ public class MainProgramacao2 {
 		e.setCep("50630650");
 		e.setCidade("Recife");
 		e.setComplemento("Proximo...");
-		e.setEstado("Pernambuco");
+		e.setEstado("PE");
 		e.setLogradouro("Rua Cardeal Dom Augusto");
 		e.setNumero("914");
 		
@@ -52,8 +52,9 @@ public class MainProgramacao2 {
 		
 		
 		Fachada fachada = Fachada.getInstancia();
-		fachada.inserirCliente(c);
+		//fachada.inserirCliente(c);
 		System.out.println(fachada.procurarCliente("10758480407"));
+		System.out.println(fachada.buscarTodosClientes());
 		fachada.inserirFormaPagamento(f);
 		System.out.println(fachada.procurarFormaPagamento(123));
 		fachada.inserirProduto(p);

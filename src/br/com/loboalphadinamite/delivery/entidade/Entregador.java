@@ -23,7 +23,7 @@ public class Entregador extends Pessoa{
 	public void setModeloMoto(String modeloMoto) {
 		this.modeloMoto = modeloMoto;
 	}
-	@Override
+	
 	public String toString() {
 		return "Entregador [matricula=" + matricula + ", placaMoto=" + placaMoto + ", modeloMoto=" + modeloMoto + "]";
 	}

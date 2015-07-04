@@ -30,17 +30,17 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 		return posicao;
 	}
 
-	@Override
+	
 	public boolean existe(Serializable chave) {
 		return procurarIndice(chave) != -1;
 	}
 
-	@Override
+	
 	public void inserir(Cliente entidade) {
 		clientes[indice++] = entidade;
 	}
 
-	@Override
+	
 	public void atualizar(Cliente entidade) {
 		if(existe(entidade.getCpf())){
 			int i = procurarIndice(entidade.getCpf());
@@ -48,7 +48,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 		}
 	}
 
-	@Override
+
 	public void remover(Serializable chave) {
 		int i = 0;
 		if(existe(chave)){
@@ -59,7 +59,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 		}
 	}
 
-	@Override
+	
 	public Cliente procurar(Serializable chave) {
 		Cliente retorno = null;
 		int indice = 0;
@@ -70,7 +70,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 		return retorno;
 	}
 
-	@Override
+	
 	public Cliente[] buscarTodos() {
 		return clientes;
 	}

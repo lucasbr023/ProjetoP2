@@ -37,7 +37,6 @@ public class Produto {
 		this.data = data;
 	}
 	
-	@Override
 	public String toString() {
 		return "Produto [codigo=" + codigo + ", nome=" + nome
 				+ ", pecoUnitario=" + pecoUnitario + ", data=" + data + "]";

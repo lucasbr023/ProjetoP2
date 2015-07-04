@@ -14,7 +14,7 @@ public class CadastroClientes implements Cadastro<Cliente>{
 		this.repositorio = repositorio;
 	}
 
-	@Override
+	
 	public boolean existe(Serializable chave) {
 		return repositorio.existe(chave);
 	}
@@ -33,7 +33,6 @@ public class CadastroClientes implements Cadastro<Cliente>{
 		}
 	}
 
-	@Override
 	public void remover(Serializable chave) {
 		repositorio.remover(chave);
 	}

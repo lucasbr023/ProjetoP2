@@ -55,7 +55,7 @@ public class RepositorioEntregador implements Repositorio<Entregador>{
 	
 
 
-	@Override
+	
 	public void remover(Serializable chave) {
 
 		if (existe(chave)) {
@@ -67,7 +67,7 @@ public class RepositorioEntregador implements Repositorio<Entregador>{
 		}
 	}//fim remover
 
-	@Override
+	
 	public Entregador[] buscarTodos() {
 		return entregadores;
 	}

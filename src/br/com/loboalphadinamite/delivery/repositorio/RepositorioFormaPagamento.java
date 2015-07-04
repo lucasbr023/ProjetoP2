@@ -29,17 +29,17 @@ public class RepositorioFormaPagamento implements Repositorio<FormaPagamento>{
 		return posicao;
 	}
 
-	@Override
+	
 	public boolean existe(Serializable chave) {
 		return procurarIndice(chave) != -1;
 	}
 
-	@Override
+	
 	public void inserir(FormaPagamento entidade) {
 		formasPagamento [indice++] = entidade;
 	}
 
-	@Override
+	
 	public void atualizar(FormaPagamento entidade) {
 		if(existe(entidade.getCodigo())){
 			int i = procurarIndice(entidade.getCodigo());
@@ -47,7 +47,7 @@ public class RepositorioFormaPagamento implements Repositorio<FormaPagamento>{
 		}
 	}
 
-	@Override
+	
 	public void remover(Serializable chave) {
 		int i = 0;
 		if(existe(chave)){
@@ -58,7 +58,7 @@ public class RepositorioFormaPagamento implements Repositorio<FormaPagamento>{
 		}
 	}
 
-	@Override
+	
 	public FormaPagamento procurar(Serializable chave) {
 		FormaPagamento retorno = null;
 		int indice = 0;
@@ -69,7 +69,7 @@ public class RepositorioFormaPagamento implements Repositorio<FormaPagamento>{
 		return retorno;
 	}
 
-	@Override
+	
 	public FormaPagamento[] buscarTodos() {
 		return formasPagamento;
 	}

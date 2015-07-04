@@ -24,7 +24,7 @@ public class FormaPagamento {
 		return getCodigo();
 	}
 	
-	@Override
+	
 	public String toString() {
 		return "FormaPagamento [codigo=" + codigo + ", nome=" + nome + "]";
 	}

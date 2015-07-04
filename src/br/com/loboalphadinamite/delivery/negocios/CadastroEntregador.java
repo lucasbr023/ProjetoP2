@@ -15,13 +15,13 @@ public class CadastroEntregador implements Cadastro<Entregador>{
 		this.repositorio = repositorio;
 	}
 	
-	@Override
+	
 	public boolean existe(Serializable chave) {
 		// TODO Auto-generated method stub
 		return repositorio.existe(chave);
 	}
 
-	@Override
+	
 	public void inserir(Entregador entidade) {
 		// TODO Auto-generated method stub
 		if(validar(entidade)){
@@ -29,7 +29,7 @@ public class CadastroEntregador implements Cadastro<Entregador>{
 		}
 	}//fim do inserir
 
-	@Override
+	
 	public void atualizar(Entregador entidade) {
 		// TODO Auto-generated method stub
 		if(validar(entidade)){
@@ -37,19 +37,19 @@ public class CadastroEntregador implements Cadastro<Entregador>{
 		}
 	}
 
-	@Override
+	
 	public void remover(Serializable chave) {
 		// TODO Auto-generated method stub
 		repositorio.remover(chave);
 		
 	}
 
-	@Override
+	
 	public Entregador procurar(Serializable chave) {
 		return repositorio.procurar(chave);
 	}
 
-	@Override
+	
 	public Entregador[] buscarTodos() {		
 		return repositorio.buscarTodos();
 	}

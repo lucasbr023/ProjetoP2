@@ -34,7 +34,7 @@ public class Cliente extends Pessoa{
 		this.email = email;
 	}
 	
-	@Override
+	
 	public String toString() {
 		return "Cliente [endereco=" + endereco + ", celular=" + celular
 				+ ", telefone=" + telefone + ", email=" + email + "]";
