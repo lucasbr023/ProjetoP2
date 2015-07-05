@@ -66,13 +66,13 @@ public class MainProgramacao2 {
 		System.out.println(fachada.buscarTodosClientes().toString());
 		fachada.buscarTodosClientes().toString();
 		//fachada.removerCliente("10758480407");
-	//	fachada.inserirFormaPagamento(f);
+		//fachada.inserirFormaPagamento(f);
 		fachada.atualizarFormaPagamento(f);
-//		System.out.println(fachada.procurarFormaPagamento(123));
-//		fachada.inserirProduto(p);
-//		System.out.println(fachada.procurarProduto(45));
-//		fachada.inserirEntregador(en);
-//		System.out.println(fachada.procurarEntregador("123456"));
+		System.out.println(fachada.procurarFormaPagamento(123));
+		fachada.inserirProduto(p);
+		System.out.println(fachada.procurarProduto(45));
+		fachada.inserirEntregador(en);
+		System.out.println(fachada.procurarEntregador("123456"));
 		fachada.inserirPedido(pedido);
 		
 		
