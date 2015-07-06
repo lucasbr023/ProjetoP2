@@ -69,11 +69,12 @@ public class MainProgramacao2 {
 		//fachada.inserirFormaPagamento(f);
 		fachada.atualizarFormaPagamento(f);
 		System.out.println(fachada.procurarFormaPagamento(123));
-		fachada.inserirProduto(p);
+		//fachada.inserirProduto(p);
 		System.out.println(fachada.procurarProduto(45));
-		fachada.inserirEntregador(en);
+		//fachada.inserirEntregador(en);
 		System.out.println(fachada.procurarEntregador("123456"));
-		fachada.inserirPedido(pedido);
+		//fachada.inserirPedido(pedido);
+		
 		
 		
 		

@@ -13,7 +13,7 @@ public class Util {
 	public static final Connection getConexao() {
 		try {
 			Class.forName("org.postgresql.Driver");
-			return DriverManager.getConnection("jdbc:postgresql://localhost:5432/ProjetoP2", "postgres" , "natalia");
+			return DriverManager.getConnection("jdbc:postgresql://localhost:5432/ProjetoP2", "postgres" , "lucas");
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

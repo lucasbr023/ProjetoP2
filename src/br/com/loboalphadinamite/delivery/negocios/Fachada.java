@@ -8,7 +8,7 @@ import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
 import br.com.loboalphadinamite.delivery.entidade.Pedido;
 import br.com.loboalphadinamite.delivery.entidade.Produto;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioClienteJDBC;
-import br.com.loboalphadinamite.delivery.repositorio.RepositorioEntregador;
+import br.com.loboalphadinamite.delivery.repositorio.RepositorioEntregadorJDBC;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioFormaPagamentoJDBC;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioPedido;
 import br.com.loboalphadinamite.delivery.repositorio.RepositorioProdutoJDBC;
@@ -40,7 +40,7 @@ public class Fachada {
 		cadastroClientes = new CadastroClientes(new RepositorioClienteJDBC());
 		cadastroFormaPagamento = new CadastroFormaPagamento(new RepositorioFormaPagamentoJDBC());
 		cadastroProduto = new CadastroProdutos(new RepositorioProdutoJDBC());
-		cadastroEntregador = new CadastroEntregador(new RepositorioEntregador());
+		cadastroEntregador = new CadastroEntregador(new RepositorioEntregadorJDBC());
 		cadastroPedidos = new CadastroPedidos(new RepositorioPedido());
 	}
 
