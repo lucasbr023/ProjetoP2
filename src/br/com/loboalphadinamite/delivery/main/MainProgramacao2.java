@@ -62,17 +62,16 @@ public class MainProgramacao2 {
 		
 		Fachada fachada = Fachada.getInstancia();
 		//fachada.inserirCliente(c);
-		System.out.println(fachada.procurarCliente("10758480403"));
-		System.out.println(fachada.buscarTodosClientes().toString());
+		fachada.procurarCliente("10758480403");
 		fachada.buscarTodosClientes().toString();
 		//fachada.removerCliente("10758480407");
 		//fachada.inserirFormaPagamento(f);
 		fachada.atualizarFormaPagamento(f);
-		System.out.println(fachada.procurarFormaPagamento(123));
+		fachada.procurarFormaPagamento(123);
 		//fachada.inserirProduto(p);
-		System.out.println(fachada.procurarProduto(45));
+		fachada.procurarProduto(45);
 		//fachada.inserirEntregador(en);
-		System.out.println(fachada.procurarEntregador("123456"));
+		fachada.procurarEntregador("123456");
 		//fachada.inserirPedido(pedido);
 		
 		
