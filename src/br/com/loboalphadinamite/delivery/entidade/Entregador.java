@@ -25,7 +25,7 @@ public class Entregador extends Pessoa{
 	}
 	
 	public String toString() {
-		return "Entregador [matricula=" + matricula + ", placaMoto=" + placaMoto + ", modeloMoto=" + modeloMoto + "]";
+		return super.toString()+ "Entregador [matricula=" + matricula + ", placaMoto=" + placaMoto + ", modeloMoto=" + modeloMoto + "]";
 	}
 	
 	

@@ -15,7 +15,7 @@ public class MainProgramacao2 {
 	
 	public static void main(String[] args) {
 		Cliente c = new Cliente();
-		c.setNome("Luca2s");
+		c.setNome("");
 		c.setCpf("10758480403");
 		c.setEmail("lmc3@cin.ufpe.br");
 		c.setCelular("97869803");
@@ -60,19 +60,32 @@ public class MainProgramacao2 {
 		pedido.setFormaPagamento(f);
 		
 		
+		FormaPagamento fp1 = new FormaPagamento();
+		fp1.setCodigo(45);
+		fp1.setNome("Teste");
+		
 		Fachada fachada = Fachada.getInstancia();
-		//fachada.inserirCliente(c);
-		fachada.procurarCliente("10758480403");
-		fachada.buscarTodosClientes().toString();
+		
+		//fachada.procurarCliente("10758480403");
+		try {
+			//fachada.inserirCliente(c);
+			fachada.buscarTodosClientes();
+			//fachada.inserirFormaPagamento(fp1);
+			fachada.buscarTodosEntregadores();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		//fachada.removerCliente("10758480407");
 		//fachada.inserirFormaPagamento(f);
-		fachada.atualizarFormaPagamento(f);
-		fachada.procurarFormaPagamento(123);
+		//fachada.atualizarFormaPagamento(f);
+		//fachada.procurarFormaPagamento(123);
 		//fachada.inserirProduto(p);
-		fachada.procurarProduto(45);
+		//fachada.procurarProduto(45);
 		//fachada.inserirEntregador(en);
-		fachada.procurarEntregador("123456");
+		//fachada.procurarEntregador("123456");
 		//fachada.inserirPedido(pedido);
+		
 		
 		
 		

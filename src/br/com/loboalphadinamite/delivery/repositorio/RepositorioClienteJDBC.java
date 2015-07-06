@@ -23,12 +23,21 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 
 	@Override
 	public void inserir(Cliente entidade) {
-		String sql = "INSERT INTO \"CLIENTE\"(\"NOME\", "
-				+ "\"CPF\", \"DATA_NASCIMENTO\", \"TELEFONE\", "
-				+ "\"CELULAR\", \"EMAIL\", \"LOGRADOURO\","
-				+ " \"NUMERO\", \"BAIRRO\", \"CIDADE\", "
-				+ "\"ESTADO\", \"CEP\"," 
-				+ "\"COMPLEMENTO\") VALUES (?, ?, ?, ?, ?, ?, "
+		String sql = "INSERT INTO \"CLIENTE\"("
+				+ "\"NOME\", "
+				+ "\"CPF\", "
+				+ "\"DATA_NASCIMENTO\", "
+				+ "\"TELEFONE\", "
+				+ "\"CELULAR\", "
+				+ "\"EMAIL\", "
+				+ "\"LOGRADOURO\","
+				+ " \"NUMERO\", "
+				+ "\"BAIRRO\", "
+				+ "\"CIDADE\", "
+				+ "\"ESTADO\", "
+				+ "\"CEP\"," 
+				+ "\"COMPLEMENTO\") "
+				+ "VALUES (?, ?, ?, ?, ?, ?, "
 				+ "?, ?, ?, ?, ?, ?, ?)";
 
 		Connection conn = Util.getConexao();
@@ -118,7 +127,7 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 		PreparedStatement ps;
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, String.valueOf(chave));
+			ps.setString(1, (String)chave);
 
 			int i = ps.executeUpdate();
 
@@ -216,8 +225,14 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 				clienteAtual.setEndereco(endereco);
 				listaClientes.add(clienteAtual);			
 			}
+			
+//			for (int i = 0; i < listaClientes.size(); i++) {
+//				System.out.println(listaClientes.get(i));
+//			}
 
 			Util.fechaConexao(conn);
+			
+		
 
 			return listaClientes.toArray(new Cliente[listaClientes.size()]);
 		} catch (SQLException e) {

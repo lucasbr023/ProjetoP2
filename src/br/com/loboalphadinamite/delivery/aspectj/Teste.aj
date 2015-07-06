@@ -1,5 +1,10 @@
 package br.com.loboalphadinamite.delivery.aspectj;
 
+import java.util.ArrayList;
+
+import br.com.loboalphadinamite.delivery.entidade.Cliente;
+import br.com.loboalphadinamite.delivery.entidade.FormaPagamento;
+
 public aspect Teste {
 
 	pointcut inserir(): execution(public void br.com.loboalphadinamite.delivery.negocios.Fachada.inserir*(..));
@@ -33,6 +38,13 @@ public aspect Teste {
 	after(): remover(){
 		System.out.println("Item removido com sucesso!");
 	}
+	after() returning(Object[] r) :buscarTodos(){
+		for (int i = 0; i < r.length; i++) {
+			System.out.println(r[i]);
+		}
+	}
+	
+
 
 
 }

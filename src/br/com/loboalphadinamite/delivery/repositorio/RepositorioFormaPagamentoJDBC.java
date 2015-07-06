@@ -153,6 +153,11 @@ public class RepositorioFormaPagamentoJDBC implements Repositorio<FormaPagamento
 				fp.setNome(result.getString("NOME"));
 				listaFormaPagamento.add(fp);
 				
+				for (int i = 0; i < listaFormaPagamento.size(); i++) {
+					FormaPagamento formap = listaFormaPagamento.get(i);
+					System.out.println(formap.getNome());
+				}
+				
 			}
 			
 			Util.fechaConexao(conn);

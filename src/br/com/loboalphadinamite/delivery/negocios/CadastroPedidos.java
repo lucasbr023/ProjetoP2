@@ -14,40 +14,42 @@ public class CadastroPedidos implements Cadastro<Pedido> {
 		this.repositorio = repositorio;
 	}
 	
-public boolean existe(Serializable chave) {
+public boolean existe(Serializable chave) throws Exception{
 		
 		return repositorio.existe(chave);
 	}
 
 	
-	public void inserir(Pedido entidade) {
+	public void inserir(Pedido entidade) throws Exception{
 		if (validar(entidade)){
 			repositorio.inserir(entidade);
 		}
 	}
 
 	
-	public void atualizar(Pedido entidade) {
+	public void atualizar(Pedido entidade) throws Exception{
 		if(validar(entidade)){
 			repositorio.atualizar(entidade);
 		}
 	}
 
-	public void remover(Serializable chave) {
+	public void remover(Serializable chave) throws Exception{
 		repositorio.remover(chave);
 
 	}
 
-	public Pedido procurar(Serializable chave) {
+	public Pedido procurar(Serializable chave) throws Exception{
 		return repositorio.procurar(chave);
 	}
 
 	
-	public Pedido[] buscarTodos() {
+	public Pedido[] buscarTodos() throws Exception{
 		return repositorio.buscarTodos();
 	}
 	
-	public static boolean validar (Pedido pedido) {
+	public static boolean validar (Pedido pedido) throws Exception{
+		
+		
 		return true;
 	}
 
