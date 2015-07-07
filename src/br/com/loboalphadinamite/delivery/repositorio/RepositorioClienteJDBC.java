@@ -17,12 +17,12 @@ import br.com.loboalphadinamite.delivery.util.Util;
 public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 
 	@Override
-	public boolean existe(Serializable chave) {
+	public boolean existe(Serializable chave) throws Exception {
 		return procurar(chave) != null;
 	}
 
 	@Override
-	public void inserir(Cliente entidade) {
+	public void inserir(Cliente entidade) throws Exception {
 		String sql = "INSERT INTO \"CLIENTE\"("
 				+ "\"NOME\", "
 				+ "\"CPF\", "
@@ -75,7 +75,7 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 	}
 
 	@Override
-	public void atualizar(Cliente entidade) {
+	public void atualizar(Cliente entidade) throws Exception{
 
 		String sql = "UPDATE \"CLIENTE\" SET \"NOME\"=?, "
 				+ "\"DATA_NASCIMENTO\"=?, \"TELEFONE\"=?, "
@@ -118,7 +118,7 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 	}
 
 	@Override
-	public void remover(Serializable chave) {
+	public void remover(Serializable chave) throws Exception{
 
 		String sql = "DELETE FROM \"CLIENTE\" WHERE \"CPF\" = ?";
 
@@ -145,7 +145,7 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 	}
 
 	@Override
-	public Cliente procurar(Serializable chave)  {
+	public Cliente procurar(Serializable chave)  throws Exception{
 
 		String sql = "SELECT * FROM \"CLIENTE\" WHERE \"CPF\" = ?";
 
@@ -190,7 +190,7 @@ public class RepositorioClienteJDBC implements Repositorio<Cliente>{
 	}
 
 	@Override
-	public Cliente[] buscarTodos() {
+	public Cliente[] buscarTodos() throws Exception {
 
 		List<Cliente> listaClientes = new ArrayList<>();
 

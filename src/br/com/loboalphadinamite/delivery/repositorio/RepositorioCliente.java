@@ -31,7 +31,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 	}
 
 	
-	public boolean existe(Serializable chave) {
+	public boolean existe(Serializable chave) throws Exception {
 		return procurarIndice(chave) != -1;
 	}
 
@@ -41,7 +41,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 	}
 
 	
-	public void atualizar(Cliente entidade) {
+	public void atualizar(Cliente entidade) throws Exception {
 		if(existe(entidade.getCpf())){
 			int i = procurarIndice(entidade.getCpf());
 			clientes[i] = entidade;
@@ -49,7 +49,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 	}
 
 
-	public void remover(Serializable chave) {
+	public void remover(Serializable chave) throws Exception {
 		int i = 0;
 		if(existe(chave)){
 			i = procurarIndice(chave);
@@ -60,7 +60,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 	}
 
 	
-	public Cliente procurar(Serializable chave) {
+	public Cliente procurar(Serializable chave) throws Exception{
 		Cliente retorno = null;
 		int indice = 0;
 		if(existe(chave)){
@@ -71,7 +71,7 @@ public class RepositorioCliente implements Repositorio<Cliente> {
 	}
 
 	
-	public Cliente[] buscarTodos() {
+	public Cliente[] buscarTodos() throws Exception {
 		return clientes;
 	}
 	

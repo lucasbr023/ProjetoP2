@@ -17,12 +17,12 @@ public class RepositorioFormaPagamentoJDBC implements Repositorio<FormaPagamento
 	
 
 	@Override
-	public boolean existe(Serializable chave) {
+	public boolean existe(Serializable chave) throws Exception {
 		return procurar(chave) != null;
 	}
 
 	@Override
-	public void inserir(FormaPagamento entidade) {
+	public void inserir(FormaPagamento entidade) throws Exception{
 		String sql = "INSERT INTO \"FORMAPAGAMENTO\"(\"NOME\", \"CODIGO\") VALUES (?, ?);";
 		
 		Connection conn = Util.getConexao();
@@ -51,7 +51,7 @@ public class RepositorioFormaPagamentoJDBC implements Repositorio<FormaPagamento
 	}
 
 	@Override
-	public void atualizar(FormaPagamento entidade) {
+	public void atualizar(FormaPagamento entidade) throws Exception {
 
 		String sql = "UPDATE \"FORMAPAGAMENTO\"   SET \"NOME\"=?  WHERE \"CODIGO\"=?;";
 		
@@ -77,7 +77,7 @@ public class RepositorioFormaPagamentoJDBC implements Repositorio<FormaPagamento
 	}
 
 	@Override
-	public void remover(Serializable chave) {
+	public void remover(Serializable chave) throws Exception {
 		String sql = "DELETE FROM \"FORMAPAGAMENTO\" WHERE \"CODIGO\" = ?;";
 		
 		Connection conn = Util.getConexao();
@@ -105,7 +105,7 @@ public class RepositorioFormaPagamentoJDBC implements Repositorio<FormaPagamento
 	}
 
 	@Override
-	public FormaPagamento procurar(Serializable chave) {
+	public FormaPagamento procurar(Serializable chave) throws Exception{
 		
 		String sql = "SELECT * FROM \"FORMAPAGAMENTO\" where \"CODIGO\" = ?;";
 		
@@ -138,7 +138,7 @@ public class RepositorioFormaPagamentoJDBC implements Repositorio<FormaPagamento
 	}
 
 	@Override
-	public FormaPagamento[] buscarTodos() {
+	public FormaPagamento[] buscarTodos() throws Exception{
 		List<FormaPagamento> listaFormaPagamento = new ArrayList<>();
 		String sql = "SELECT * FROM \"FORMAPAGAMENTO\";";
 		

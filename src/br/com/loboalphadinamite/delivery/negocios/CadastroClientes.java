@@ -61,9 +61,9 @@ public class CadastroClientes implements Cadastro<Cliente>{
 		if (cliente.getCpf().length() != 11) {
 			throw new CampoPreenchidoIncorreto("O CPF deve conter apenas 11 digitos!");
 		}
-		/*if (cliente.getCpf().matches("\\d+")) {
-			throw new CampoNumericoPreenchidoComLetrasException("CPF deve conter apenas numeros!") ;
-		}*/
+//		if (cliente.getCpf().matches("\\d+")) {
+//			throw new CampoNumericoPreenchidoComLetras("CPF deve conter apenas numeros!") ;
+//		}
 		if (cliente.getCelular() == null || cliente.getCelular().isEmpty()) {
 			throw new CampoObrigatorioNaoInformado("Celular não informado!");
 		}

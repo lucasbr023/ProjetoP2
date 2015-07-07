@@ -16,7 +16,7 @@ public class RepositorioFormaPagamento implements Repositorio<FormaPagamento>{
 		indice = 0;
 	}
 
-	private int procurarIndice(Serializable codigo){
+	private int procurarIndice(Serializable codigo) {
 
 		int posicao = -1;
 

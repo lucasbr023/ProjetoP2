@@ -15,8 +15,8 @@ public class MainProgramacao2 {
 	
 	public static void main(String[] args) {
 		Cliente c = new Cliente();
-		c.setNome("");
-		c.setCpf("10758480403");
+		c.setNome("Natalia");
+		c.setCpf("10758480406");
 		c.setEmail("lmc3@cin.ufpe.br");
 		c.setCelular("97869803");
 		c.setTelefone("32286151");
@@ -69,9 +69,16 @@ public class MainProgramacao2 {
 		//fachada.procurarCliente("10758480403");
 		try {
 			//fachada.inserirCliente(c);
-			fachada.buscarTodosClientes();
 			//fachada.inserirFormaPagamento(fp1);
+			fachada.buscarTodosClientes();
 			fachada.buscarTodosEntregadores();
+			fachada.buscarTodosFormaPagamentos();
+			fachada.buscarTodosProdutos();
+			fachada.procurarFormaPagamento(123);
+			fachada.procurarProduto(45);
+			fachada.procurarEntregador("123456");
+			fachada.procurarCliente("10758480407");
+			
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

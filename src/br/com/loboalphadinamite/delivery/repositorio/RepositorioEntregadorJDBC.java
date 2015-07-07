@@ -16,7 +16,7 @@ import br.com.loboalphadinamite.delivery.util.Util;
 public class RepositorioEntregadorJDBC implements Repositorio<Entregador>{
 
 	@Override
-	public boolean existe(Serializable chave) {
+	public boolean existe(Serializable chave) throws Exception {
 		return procurar(chave) != null;
 	}
 
@@ -56,7 +56,7 @@ public class RepositorioEntregadorJDBC implements Repositorio<Entregador>{
 	}
 
 	@Override
-	public void atualizar(Entregador entidade) {
+	public void atualizar(Entregador entidade) throws Exception{
 		String sql = "UPDATE \"ENTREGADOR\" SET "
 				+ "\"NOME\"=?, "
 				+ "\"CPF\"=?, "
@@ -88,7 +88,7 @@ public class RepositorioEntregadorJDBC implements Repositorio<Entregador>{
 	}
 
 	@Override
-	public void remover(Serializable chave) {
+	public void remover(Serializable chave) throws Exception{
 		String sql = "DELETE FROM \"ENTREGADOR\" WHERE \"MATRICULA\" = ?;";
 		Connection conn = Util.getConexao();
 		try {
@@ -107,7 +107,7 @@ public class RepositorioEntregadorJDBC implements Repositorio<Entregador>{
 	}
 
 	@Override
-	public Entregador procurar(Serializable chave) {
+	public Entregador procurar(Serializable chave) throws Exception {
 		String sql = "SELECT *  FROM \"ENTREGADOR\" WHERE \"MATRICULA\" = ?;";
 
 		Connection conn = Util.getConexao();
@@ -140,7 +140,7 @@ public class RepositorioEntregadorJDBC implements Repositorio<Entregador>{
 	}
 
 	@Override
-	public Entregador[] buscarTodos() {
+	public Entregador[] buscarTodos() throws Exception{
 		String sql = "SELECT * FROM \"ENTREGADOR\"";
 		List<Entregador> listaEntregadores = new ArrayList<>();
 
