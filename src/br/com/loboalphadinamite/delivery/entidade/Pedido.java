@@ -1,13 +1,32 @@
 package br.com.loboalphadinamite.delivery.entidade;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Pedido {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import br.com.loboalphadinamite.delivery.interfaces.EntidadeBasica;
+ax.persistence.TemporalType;
+
+@Entity
+@Table(name = "pedido")
+public class Pedido implements Serializable,EntidadeBasica{
 	
+	@Id
+	@Column
 	private Integer codigo;
+	@Temporal(TemporalType.DATE)
 	private Date dataPedido;
+	@Column
 	private Cliente cliente;
+	@Column
 	private Entregador entregador;
+	@Column
 	private FormaPagamento formaPagamento;
 	//private StatusPedido statusPedido;
 	
@@ -47,6 +66,16 @@ public class Pedido {
 		return "Pedido [codigo=" + codigo + ", dataPedido=" + dataPedido
 				+ ", cliente=" + cliente + ", entregador=" + entregador
 				+ ", formaPagamento=" + formaPagamento + "]";
+	}
+	@Override
+	public Serializable getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean validar() throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	
